@@ -11,6 +11,7 @@ import { PostsService } from '../posts.service';
 })
 export class PostListComponent implements OnInit, OnDestroy {
   posts:Post[]= [];
+  isLoading= false;
   private postsSub: Subscription;// se crea para tener la subcription
   //y cancelar y evitar perdida de memoria OnDestroy
 
@@ -19,10 +20,12 @@ export class PostListComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.postService.getPosts();
     //4.hago una subscripcion del updateListener
    this.postsSub = this.postService.getPostUpdateListener()
     .subscribe((posts:Post[])=>{
+      this.isLoading = false;
       this.posts = posts;
     });
   }
