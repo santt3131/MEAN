@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Post } from '../../post.model';
-import { PostsService } from '../../posts.service';
+import { Post } from '../post.model';
+import { PostsService } from '../posts.service';
+
 
 @Component({
   selector: 'app-post-create',
