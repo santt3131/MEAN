@@ -16,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
     MatExpansionModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
+    MatPaginatorModule,
     HttpClientModule,
   ],
   providers: [],
