@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const app = express();
 
 const postRoutes = require("./routes/posts");
+const userRoutes = require("./routes/user");
 const Post = require("./models/post");
 
 mongoose.connect("mongodb+srv://santt31:Alaska123@cluster0.oreks.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
@@ -34,8 +35,9 @@ app.use((req, res, next) => {
   next();
 });
 
-//importamos
+//configuro mi api
 app.use("/api/posts", postRoutes);
+app.use("/api/user", userRoutes);
 
 //exportamos la aplicacion
 module.exports = app;
