@@ -10,7 +10,7 @@ const postRoutes = require("./routes/posts");
 const userRoutes = require("./routes/user");
 const Post = require("./models/post");
 
-mongoose.connect("mongodb+srv://santt31:Alaska123@cluster0.oreks.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://santt31:" + process.env.MONGO_ATLAS_PW + "@cluster0.oreks.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
   .then(() => {
     console.log("Connected to database!");
   })
